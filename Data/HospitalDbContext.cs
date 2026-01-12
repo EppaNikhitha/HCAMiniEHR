@@ -41,6 +41,7 @@ public partial class HospitalDbContext : DbContext
             entity.HasOne(d => d.Patient).WithMany(p => p.Appointments)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Appointment_Patient");
+            //hello
         });
 
         modelBuilder.Entity<AuditLog>(entity =>
