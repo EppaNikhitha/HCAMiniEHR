@@ -1,0 +1,12 @@
+﻿@page "{id:int}"
+@model HCAMiniEHR.Pages.LabOrders.DeleteModel
+
+<h3>Delete Lab Order?</h3>
+
+<p>@Model.LabOrder.TestName</p>
+
+<form method="post">
+    <input type="hidden" asp-for="LabOrder.LabOrderId" />
+    <button class="btn btn-danger">Delete</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+</form>

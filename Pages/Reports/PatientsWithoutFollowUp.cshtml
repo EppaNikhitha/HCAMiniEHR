@@ -1,0 +1,11 @@
+﻿@page
+@model HCAMiniEHR.Pages.Reports.PatientsWithoutFollowUpModel
+
+<h2>Patients Without Future Appointments</h2>
+
+<ul>
+    @foreach (var p in Model.Patients)
+    {
+        <li>@p.FullName</li>
+    }
+</ul>

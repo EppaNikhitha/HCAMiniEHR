@@ -1,0 +1,33 @@
+﻿@page
+@model HCAMiniEHR.Pages.Appointments.IndexModel
+
+<h2>Appointments</h2>
+
+<a asp-page="Create" class="btn btn-primary mb-2">Add Appointment</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Patient</th>
+            <th>Date</th>
+            <th>Reason</th>
+            <th>Status</th> <!-- Optional, if you want to display the status -->
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model.Appointments)
+        {
+            <tr>
+                <td>@a.Patient.FullName</td>
+                <td>@a.AppointmentDate.ToString("yyyy-MM-dd")</td>
+                <td>@a.Reason</td>
+                <td>@a.Status</td> <!-- Optional, if you added the status column -->
+                <td>
+                    <a asp-page="Edit" asp-route-id="@a.AppointmentId" class="btn btn-warning btn-sm">Edit</a> |
+                    <a asp-page="Delete" asp-route-id="@a.AppointmentId" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this appointment?');">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,14 @@
+﻿@page
+@model HCAMiniEHR.Pages.Reports.PendingLabOrdersModel
+
+<h2>Pending Lab Orders</h2>
+
+<table class="table table-bordered">
+    @foreach (var l in Model.Orders)
+    {
+        <tr>
+            <td>@l.TestName</td>
+            <td>@l.Status</td>
+        </tr>
+    }
+</table>

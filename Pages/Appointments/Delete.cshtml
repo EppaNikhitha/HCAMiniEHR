@@ -1,0 +1,19 @@
+﻿@page "{id:int}"
+@model HCAMiniEHR.Pages.Appointments.DeleteModel
+
+<h2>Delete Appointment</h2>
+
+<form method="post">
+    <div>
+        <label>Appointment Date</label>
+        <input type="text" class="form-control" value="@Model.Appointment.AppointmentDate" readonly />
+    </div>
+
+    <div>
+        <label>Reason</label>
+        <input type="text" class="form-control" value="@Model.Appointment.Reason" readonly />
+    </div>
+
+    <button class="btn btn-danger mt-2">Delete</button>
+    <a asp-page="Index" class="btn btn-secondary mt-2">Back</a>
+</form>

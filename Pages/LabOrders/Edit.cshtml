@@ -1,0 +1,25 @@
+﻿@page "{id:int}"
+@model HCAMiniEHR.Pages.LabOrders.EditModel
+
+<h2>Edit Lab Order</h2>
+
+<form method="post">
+    <!-- Hidden input for LabOrderId -->
+    <input type="hidden" asp-for="LabOrder.LabOrderId" />
+
+    <div>
+        <label>Test Name</label>
+        <input asp-for="LabOrder.TestName" class="form-control" />
+    </div>
+
+    <div>
+        <label>Status</label>
+        <input asp-for="LabOrder.Status" class="form-control" />
+    </div>
+
+    <!-- Update button -->
+    <button type="submit" class="btn btn-primary mt-2">Update</button>
+
+    <!-- Back link -->
+    <a asp-page="Index" class="btn btn-secondary mt-2">Back</a>
+</form>

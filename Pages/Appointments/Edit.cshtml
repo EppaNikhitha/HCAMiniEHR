@@ -1,0 +1,25 @@
+﻿@page "{id:int}"
+@model HCAMiniEHR.Pages.Appointments.EditModel
+
+<h2>Edit Appointment</h2>
+
+<form method="post">
+    <!-- Hidden input for AppointmentId -->
+    <input type="hidden" asp-for="Appointment.AppointmentId" />
+
+    <div>
+        <label>Date</label>
+        <input asp-for="Appointment.AppointmentDate" type="date" class="form-control" />
+    </div>
+
+    <div>
+        <label>Reason</label>
+        <input asp-for="Appointment.Reason" class="form-control" />
+    </div>
+
+    <!-- Update button -->
+    <button type="submit" class="btn btn-primary mt-2">Update</button>
+
+    <!-- Back link -->
+    <a asp-page="Index" class="btn btn-secondary mt-2">Back</a>
+</form>

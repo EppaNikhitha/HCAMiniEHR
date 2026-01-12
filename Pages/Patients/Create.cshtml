@@ -1,0 +1,22 @@
+﻿@page
+@model HCAMiniEHR.Pages.Patients.CreateModel
+
+<h2>Add Patient</h2>
+
+<form method="post">
+    <div>
+        <label>Name</label>
+        <input asp-for="Patient.FullName" class="form-control" />
+    </div>
+    <div>
+        <label>Gender</label>
+        <input asp-for="Patient.Gender" class="form-control" />
+    </div>
+    <div>
+        <label>Phone</label>
+        <input asp-for="Patient.Phone" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Save</button>
+    <a asp-page="Index" class="btn btn-secondary mt-2">Back</a>
+</form>
