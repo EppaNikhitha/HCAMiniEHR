@@ -7,15 +7,17 @@
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" /> <!-- For icons -->
 </head>
 
 <body class="bg-light">
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <!-- Navbar with consistent light blue background -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-info shadow-sm">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold" asp-page="/Index">
-                    🏥 HCAMiniEHR
+                <a class="navbar-brand fw-bold text-white" asp-page="/Index">
+                    <i class="fas fa-hospital-alt"></i> HCAMini Dashboard
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -24,27 +26,22 @@
 
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav ms-auto">
-
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Patients/Index">Patients</a>
+                            <a class="nav-link text-white" asp-page="/Patients/Index">Patients</a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Appointments/Index">Appointments</a>
+                            <a class="nav-link text-white" asp-page="/Appointments/Index">Appointments</a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/LabOrders/Index">Lab Orders</a>
+                            <a class="nav-link text-white" asp-page="/LabOrders/Index">Lab Orders</a>
                         </li>
-
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Reports</a>
+                            <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown">Reports</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" asp-page="/Reports/PendingLabOrders">Pending Labs</a></li>
                                 <li><a class="dropdown-item" asp-page="/Reports/PatientsWithoutFollowUp">No Follow-up</a></li>
                             </ul>
                         </li>
-
                     </ul>
                 </div>
             </div>
@@ -52,14 +49,65 @@
     </header>
 
     <div class="container mt-4">
-        <div class="card shadow-sm">
+        <!-- Main Content Card -->
+        <div class="card shadow-lg rounded-3 mb-4">
             <div class="card-body">
+                <!-- Display the Page Content -->
                 @RenderBody()
             </div>
         </div>
+
+        <!-- Cards for navigation links with equal sizes -->
+        <div class="row mt-4">
+            <!-- Patient Card -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm bg-light border-light h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><i class="fas fa-user-injured"></i> Manage Patients</h5>
+                        <p class="card-text">Add, view, and update patient information.</p>
+                        <a class="btn btn-primary" asp-page="/Patients/Index">Go to Patients</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Appointment Card -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm bg-light border-light h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><i class="fas fa-calendar-check"></i> Manage Appointments</h5>
+                        <p class="card-text">Create, view, and edit appointments.</p>
+                        <a class="btn btn-info" asp-page="/Appointments/Index">Go to Appointments</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab Orders Card -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm bg-light border-light h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><i class="fas fa-flask"></i> Lab Orders</h5>
+                        <p class="card-text">Create, view, and manage lab orders.</p>
+                        <a class="btn btn-success" asp-page="/LabOrders/Index">Go to Lab Orders</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports Card -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm bg-light border-light h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><i class="fas fa-chart-line"></i> Reports</h5>
+                        <p class="card-text">Generate and view important reports.</p>
+                        <a class="btn btn-warning" asp-page="/Reports/PendingLabOrders">Go to Reports</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <footer class="bg-primary text-white text-center p-3 mt-4">
+    <!-- Footer with consistent light blue color -->
+    <footer class="bg-info text-white text-center p-3 mt-4">
         HCAMiniEHR © 2026 — Patient Management System
     </footer>
 
