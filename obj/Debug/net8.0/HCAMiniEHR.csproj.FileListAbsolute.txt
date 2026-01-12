@@ -144,3 +144,4 @@ C:\Nikhithaprojectssss\HCAMiniEHR\HCAMiniEHR\obj\Debug\net8.0\refint\HCAMiniEHR.
 C:\Nikhithaprojectssss\HCAMiniEHR\HCAMiniEHR\obj\Debug\net8.0\HCAMiniEHR.pdb
 C:\Nikhithaprojectssss\HCAMiniEHR\HCAMiniEHR\obj\Debug\net8.0\HCAMiniEHR.genruntimeconfig.cache
 C:\Nikhithaprojectssss\HCAMiniEHR\HCAMiniEHR\obj\Debug\net8.0\ref\HCAMiniEHR.dll
+C:\Nikhithaprojectssss\HCAMiniEHR\HCAMiniEHR\obj\Debug\net8.0\HCAMiniEHR.sourcelink.json
